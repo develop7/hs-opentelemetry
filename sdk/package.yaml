@@ -37,7 +37,7 @@ dependencies:
 - vector-builder
 - http-types
 - network-bsd
-- unix
+- unix-compat >= 0.7.1 # for getProcessID
 - transformers
 - random >= 1.2.0
 

@@ -1,6 +1,6 @@
 cabal-version: 1.22
 
--- This file has been generated from package.yaml by hpack version 0.35.2.
+-- This file has been generated from package.yaml by hpack version 0.36.0.
 --
 -- see: https://github.com/sol/hpack
 
@@ -85,6 +85,7 @@ library
     , transformers
     , unagi-chan
     , unix
+    , unix-compat >=0.7.1
     , unordered-containers
     , vector
     , vector-builder
@@ -121,6 +122,7 @@ test-suite hs-opentelemetry-sdk-test
     , transformers
     , unagi-chan
     , unix
+    , unix-compat >=0.7.1
     , unordered-containers
     , vector
     , vector-builder
