@@ -17,7 +17,7 @@
 #
 # resolver: ./custom-snapshot.yaml
 # resolver: https://example.com/snapshots/2018-01-01.yaml
-resolver: lts-20.24
+resolver: lts-20.26
 
 # User packages to be built.
 # Various formats can be used as shown in the example below.
@@ -54,6 +54,7 @@ packages:
 - instrumentation/wai
 - examples/hspec
 - examples/yesod-minimal
+- utils/exceptions
 
 # Dependency packages to be pulled from upstream that are not in the resolver.
 # These entries can reference officially published versions as well as
@@ -100,5 +101,5 @@ extra-deps:
 # compiler-check: newer-minor
 
 nix:
-  enable: true
+  enable: false # true
   packages: [libffi, mysql80, openssl, pcre, postgresql, zlib, zstd]
