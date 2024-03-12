@@ -4,19 +4,19 @@ cabal-version: 1.22
 --
 -- see: https://github.com/sol/hpack
 
-name:               hs-opentelemetry-sdk
-version:            0.0.3.6
-synopsis:           OpenTelemetry SDK for use in applications.
-description:        Please see the README on GitHub at <https://github.com/iand675/hs-opentelemetry/tree/main/sdk#readme>
-category:           OpenTelemetry, Telemetry, Monitoring, Observability, Metrics
-homepage:           https://github.com/iand675/hs-opentelemetry#readme
-bug-reports:        https://github.com/iand675/hs-opentelemetry/issues
-author:             Ian Duncan, Jade Lovelace
-maintainer:         ian@iankduncan.com
-copyright:          2023 Ian Duncan, Mercury Technologies
-license:            BSD3
-license-file:       LICENSE
-build-type:         Simple
+name:           hs-opentelemetry-sdk
+version:        0.0.3.6
+synopsis:       OpenTelemetry SDK for use in applications.
+description:    Please see the README on GitHub at <https://github.com/iand675/hs-opentelemetry/tree/main/sdk#readme>
+category:       OpenTelemetry, Telemetry, Monitoring, Observability, Metrics
+homepage:       https://github.com/iand675/hs-opentelemetry#readme
+bug-reports:    https://github.com/iand675/hs-opentelemetry/issues
+author:         Ian Duncan, Jade Lovelace
+maintainer:     ian@iankduncan.com
+copyright:      2023 Ian Duncan, Mercury Technologies
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
 extra-source-files:
     README.md
     ChangeLog.md
@@ -84,7 +84,6 @@ library
     , text
     , transformers
     , unagi-chan
-    , unix
     , unix-compat >=0.7.1
     , unordered-containers
     , vector
@@ -121,7 +120,6 @@ test-suite hs-opentelemetry-sdk-test
     , text
     , transformers
     , unagi-chan
-    , unix
     , unix-compat >=0.7.1
     , unordered-containers
     , vector
