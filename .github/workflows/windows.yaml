@@ -1,0 +1,17 @@
+name: Windows build
+on: [push]
+jobs:
+  stack:
+    name: Build with stack
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Haskell
+      uses: haskell-actions/setup@v2.7.5
+      with:
+        ghc-version: '9.6'
+        enable-stack: true
+        stack-version: 'latest'
+        stack-setup-ghc: true
+    - name: 'Build with stack'
+      run: 'stack build --no-terminal --lock-file error-on-write'
