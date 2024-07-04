@@ -13,5 +13,17 @@ jobs:
         enable-stack: true
         stack-version: 'latest'
         stack-setup-ghc: true
+    - name: 'Cache stack directories'
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~\AppData\Roaming\stack\pantry
+          ~\AppData\Local\Programs\stack\pantry
+          ~\AppData\Roaming\stack\snapshots
+          ~\AppData\Local\Programs\stack\snapshots
+          ~\AppData\Roaming\stack\stack.sqlite3
+          ~\AppData\Local\Programs\stack\stack.sqlite3
+          .stack-work
+        key: ${{ runner.os }}-stack-${{ hashFiles('stack.yaml.lock') }}
     - name: 'Build with stack'
       run: 'stack build --no-terminal --lock-file error-on-write'
