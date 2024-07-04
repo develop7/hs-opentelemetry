@@ -14,7 +14,7 @@ jobs:
         stack-version: 'latest'
         stack-setup-ghc: true
     - name: 'Cache stack directories'
-      uses: actions/cache@v2
+      uses: actions/cache@v4.0.2
       with:
         path: |
           ~\AppData\Roaming\stack\pantry
