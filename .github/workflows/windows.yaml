@@ -22,9 +22,15 @@ jobs:
     - name: Set up Haskell
       uses: haskell-actions/setup@v2.7.5
       with:
-        ghc-version: '9.6'
+        ghc-version: '9.2'
         enable-stack: true
         stack-version: 'latest'
         stack-setup-ghc: true
+    - name: 'stack setup'
+      run: stack setup
+    - name: 'Install dependencies'
+      run: |
+        cd C:\Users\runneradmin\AppData\Local\Programs\stack\x86_64-windows\msys2-20230526\mingw64
+        ./bin/pacman -S mingw-w64-x86_64-libmariadbclient
     - name: 'Build with stack'
       run: 'stack build --no-terminal --lock-file error-on-write'
