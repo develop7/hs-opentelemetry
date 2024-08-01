@@ -6,13 +6,6 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v4
-    - name: Set up Haskell
-      uses: haskell-actions/setup@v2.7.5
-      with:
-        ghc-version: '9.6'
-        enable-stack: true
-        stack-version: 'latest'
-        stack-setup-ghc: true
     - name: 'Cache stack directories'
       uses: actions/cache@v4.0.2
       with:
@@ -26,5 +19,12 @@ jobs:
           .stack-work
         key: ${{ runner.os }}-stack-${{ hashFiles('stack.yaml.lock') }}
         save-always: true
+    - name: Set up Haskell
+      uses: haskell-actions/setup@v2.7.5
+      with:
+        ghc-version: '9.6'
+        enable-stack: true
+        stack-version: 'latest'
+        stack-setup-ghc: true
     - name: 'Build with stack'
       run: 'stack build --no-terminal --lock-file error-on-write'
