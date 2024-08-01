@@ -1,9 +1,17 @@
 name: Windows build
 on: [push]
 jobs:
+  files:
+    name: 'Show me the files'
+    runs-on: windows-latest
+    steps:
+      - run: |
+          tree /F
+
   stack:
     name: Build with stack
     runs-on: windows-latest
+    if: false
     steps:
     - uses: actions/checkout@v4
     - name: 'Cache stack directories'
