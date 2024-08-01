@@ -6,7 +6,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - run: |
-          tree /F
+          tree /F C:\
 
   stack:
     name: Build with stack
