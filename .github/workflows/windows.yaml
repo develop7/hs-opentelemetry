@@ -2,12 +2,10 @@ name: Windows build
 on: [push]
 jobs:
   files:
-    name: 'Show me installed GHCs'
+    name: 'Show me files'
     runs-on: windows-latest
     steps:
-      - run: |
-          ghcup list --tool=ghc --show-criteria=installed --raw-format
-      - run: 'ls c:\mingw64\bin'
+      - run: 'ls c:\msys64\bin'
   stack:
     name: Build with stack
     runs-on: windows-latest
