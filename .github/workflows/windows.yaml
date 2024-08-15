@@ -1,15 +1,9 @@
 name: Windows build
 on: [push]
 jobs:
-  files:
-    name: 'Show me files'
-    runs-on: windows-latest
-    steps:
-      - run: 'ls c:\msys64\bin'
   stack:
     name: Build with stack
     runs-on: windows-latest
-    if: false
     steps:
     - uses: actions/checkout@v4
     - name: 'Cache stack directories'
@@ -34,9 +28,7 @@ jobs:
         stack-setup-ghc: true
     - name: 'stack setup'
       run: stack setup
-    - name: 'Install dependencies'
-      run: |
-        cd C:\Users\runneradmin\AppData\Local\Programs\stack\x86_64-windows\msys2-20230526\mingw64
-        ./bin/pacman -S mingw-w64-x86_64-libmariadbclient
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v3    
     - name: 'Build with stack'
       run: 'stack build --no-terminal --lock-file error-on-write'
